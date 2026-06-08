@@ -64,4 +64,12 @@ LittleMissPeregrine/
 └── LittleMissPeregrine.xcodeproj/            # Xcode project file
 ```
 
-### Key Components
+### Technology Used
+
+### What I Learned
+
+© 2026 Little Miss Peregrine. All rights reserved.
+
+This project and its contents are the intellectual property of Little Miss Peregrine. Redistribution, modification, or use of the code, design, or related materials without express written permission is prohibited.
+
+For inquiries regarding licensing or collaboration, please contact nadiaaureliac@gmail.com.
