@@ -9,7 +9,7 @@
 <p align="center">
 <a href="https://github.com/12elia" rel="nofollow"><img alt="Automaze" src="https://img.shields.io/badge/By-12elia-4b3baf" style="max-width: 100%;"></a>
 <a href="https://github.com/12elia/Little-Miss-Peregrine/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/License-MIT-28a745" style="max-width: 100%;"></a>
-<a href="http://instagram.com/intent/follow?screen_name=nadiaaureliac" rel="nofollow"><img alt="Follow on Instagram" src="https://img.shields.io/badge/Instagram-@nadiaaureliac-E4405F?logo=instagram&logoColor=white)](https://instagram.com/nadiaaureliac)" style="max-width: 100%;"></a>
+<a href="http://instagram.com/nadiaaureliac" rel="nofollow"><img alt="Follow on Instagram" src="https://img.shields.io/badge/Instagram-@nadiaaureliac-E4405F?logo=instagram&logoColor=white)](https://instagram.com/nadiaaureliac)" style="max-width: 100%;"></a>
 </p>
 
 Hello, Travelers!
