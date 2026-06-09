@@ -265,71 +265,179 @@ struct ScrapbookCard: View {
 }
 
 // MARK: - Dummy Data
+//struct DummyData {
+//    static var pastTrips: [TripDetails] {
+//        let cal = Calendar.current
+//
+//        let t1 = TripDetails(
+//            city: "Tokyo", country: "Japan",
+//            customTripName: "Tokyo Spring 2025",
+//            startDate: cal.date(byAdding: .month, value: -8, to: Date())!,
+//            endDate:   cal.date(byAdding: .month, value: -7, to: Date())!,
+//            travelVibes: ["Culinary", "Culture", "Photography"],
+//            budgetLevel: 6, tripPace: 7
+//        )
+//
+//        let t2 = TripDetails(
+//            city: "Barcelona", country: "Spain",
+//            customTripName: "Barcelona Solo",
+//            startDate: cal.date(byAdding: .month, value: -5, to: Date())!,
+//            endDate:   cal.date(byAdding: .month, value: -5, to: Date())!.addingTimeInterval(86400 * 5),
+//            travelVibes: ["History", "Culinary", "Nightlife"],
+//            budgetLevel: 5, tripPace: 6
+//        )
+//
+//        let t3 = TripDetails(
+//            city: "Kyoto", country: "Japan",
+//            customTripName: "Kyoto Autumn",
+//            startDate: cal.date(byAdding: .month, value: -3, to: Date())!,
+//            endDate:   cal.date(byAdding: .month, value: -3, to: Date())!.addingTimeInterval(86400 * 4),
+//            travelVibes: ["Nature", "History", "Photography"],
+//            budgetLevel: 4, tripPace: 3
+//        )
+//
+//        let t4 = TripDetails(
+//            city: "Amsterdam", country: "Netherlands",
+//            customTripName: "Amsterdam Wander",
+//            startDate: cal.date(byAdding: .month, value: -1, to: Date())!,
+//            endDate:   cal.date(byAdding: .day, value: -20, to: Date())!,
+//            travelVibes: ["Culture", "Café Hopping", "Photography"],
+//            budgetLevel: 7, tripPace: 4
+//        )
+//
+//        // Add some dummy completed items
+//        [t1, t2, t3, t4].forEach { trip in
+//            let venues = ["Central Café", "Old Museum", "Night Market", "Riverside Walk", "Art Gallery"]
+//            let photos = ["dummy_1", "dummy_2", "dummy_3", "dummy_4"]
+//            venues.enumerated().forEach { i, venue in
+//                let item = ItineraryItem(
+//                    activityName: "Visit",
+//                    venueName: venue,
+//                    category: .sightseeing,
+//                    date: trip.startDate.addingTimeInterval(Double(i) * 3600),
+//                    recommendedTime: trip.startDate.addingTimeInterval(Double(i) * 3600),
+//                    trip: trip
+//                )
+//                item.isCompleted = i < 3
+//
+//                // Attach dummy photo if asset exists
+//                if i < 3, let img = UIImage(named: photos[i % photos.count]) {
+//                    item.proofPhotoData = img.jpegData(compressionQuality: 0.8)
+//                }
+//
+//                trip.itineraryItems.append(item)
+//            }
+//        }
+//
+//        return [t1, t2, t3, t4]
+//    }
+//}
+
+
 struct DummyData {
+
     static var pastTrips: [TripDetails] {
         let cal = Calendar.current
 
         let t1 = TripDetails(
-            city: "Tokyo", country: "Japan",
-            customTripName: "Tokyo Spring 2025",
+            city: "Paris",
+            country: "France",
+            customTripName: "Nadia in Paris",
             startDate: cal.date(byAdding: .month, value: -8, to: Date())!,
-            endDate:   cal.date(byAdding: .month, value: -7, to: Date())!,
+            endDate: cal.date(byAdding: .month, value: -7, to: Date())!,
             travelVibes: ["Culinary", "Culture", "Photography"],
-            budgetLevel: 6, tripPace: 7
+            budgetLevel: 6,
+            tripPace: 7
         )
 
         let t2 = TripDetails(
-            city: "Barcelona", country: "Spain",
+            city: "Barcelona",
+            country: "Spain",
             customTripName: "Barcelona Solo",
             startDate: cal.date(byAdding: .month, value: -5, to: Date())!,
-            endDate:   cal.date(byAdding: .month, value: -5, to: Date())!.addingTimeInterval(86400 * 5),
+            endDate: cal.date(byAdding: .month, value: -5, to: Date())!.addingTimeInterval(86400 * 5),
             travelVibes: ["History", "Culinary", "Nightlife"],
-            budgetLevel: 5, tripPace: 6
+            budgetLevel: 5,
+            tripPace: 6
         )
 
         let t3 = TripDetails(
-            city: "Kyoto", country: "Japan",
-            customTripName: "Kyoto Autumn",
+            city: "Curug",
+            country: "Indonesia",
+            customTripName: "Curug Calls",
             startDate: cal.date(byAdding: .month, value: -3, to: Date())!,
-            endDate:   cal.date(byAdding: .month, value: -3, to: Date())!.addingTimeInterval(86400 * 4),
+            endDate: cal.date(byAdding: .month, value: -3, to: Date())!.addingTimeInterval(86400 * 4),
             travelVibes: ["Nature", "History", "Photography"],
-            budgetLevel: 4, tripPace: 3
+            budgetLevel: 4,
+            tripPace: 3
         )
 
         let t4 = TripDetails(
-            city: "Amsterdam", country: "Netherlands",
-            customTripName: "Amsterdam Wander",
+            city: "Melbourne",
+            country: "Australia",
+            customTripName: "Melbourne Marathon",
             startDate: cal.date(byAdding: .month, value: -1, to: Date())!,
-            endDate:   cal.date(byAdding: .day, value: -20, to: Date())!,
+            endDate: cal.date(byAdding: .day, value: -20, to: Date())!,
             travelVibes: ["Culture", "Café Hopping", "Photography"],
-            budgetLevel: 7, tripPace: 4
+            budgetLevel: 7,
+            tripPace: 4
         )
 
-        // Add some dummy completed items
-        [t1, t2, t3, t4].forEach { trip in
-            let venues = ["Central Café", "Old Museum", "Night Market", "Riverside Walk", "Art Gallery"]
-            let photos = ["dummy_1", "dummy_2", "dummy_3"]
-            venues.enumerated().forEach { i, venue in
-                let item = ItineraryItem(
-                    activityName: "Visit",
-                    venueName: venue,
-                    category: .sightseeing,
-                    date: trip.startDate.addingTimeInterval(Double(i) * 3600),
-                    recommendedTime: trip.startDate.addingTimeInterval(Double(i) * 3600),
-                    trip: trip
-                )
-                item.isCompleted = i < 3
+        populateTrip(
+            t1,
+            photos: ["dummy_1", "dummy_2", "dummy_3"]
+        )
 
-                // Attach dummy photo if asset exists
-                if i < 3, let img = UIImage(named: photos[i % photos.count]) {
-                    item.proofPhotoData = img.jpegData(compressionQuality: 0.8)
-                }
+        populateTrip(
+            t2,
+            photos: ["dummy_4", "dummy_4", "dummy_4"]
+        )
 
-                trip.itineraryItems.append(item)
-            }
-        }
+        populateTrip(
+            t3,
+            photos: ["dummy_5", "dummy_4", "dummy_4"]
+        )
+
+        populateTrip(
+            t4,
+            photos: ["dummy_7", "dummy_4", "dummy_4"]
+        )
 
         return [t1, t2, t3, t4]
+    }
+
+    private static func populateTrip(
+        _ trip: TripDetails,
+        photos: [String]
+    ) {
+        let venues = [
+            "Central Café",
+            "Old Museum",
+            "Night Market",
+            "Riverside Walk",
+            "Art Gallery"
+        ]
+
+        for (index, venue) in venues.enumerated() {
+
+            let item = ItineraryItem(
+                activityName: "Visit",
+                venueName: venue,
+                category: .sightseeing,
+                date: trip.startDate.addingTimeInterval(Double(index) * 3600),
+                recommendedTime: trip.startDate.addingTimeInterval(Double(index) * 3600),
+                trip: trip
+            )
+
+            item.isCompleted = index < 3
+
+            if index < 3,
+               let image = UIImage(named: photos[index]) {
+                item.proofPhotoData = image.jpegData(compressionQuality: 0.85)
+            }
+
+            trip.itineraryItems.append(item)
+        }
     }
 }
 

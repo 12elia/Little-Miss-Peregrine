@@ -264,8 +264,71 @@ struct TripRowCard: View {
 //    HomeView()
 //        .modelContainer(for: TripDetails.self, inMemory: true)
 //}
-//
+
+#Preview("With Trips") {
+    PreviewHomeView()
+}
+
+struct PreviewHomeView: View {
+    @State private var createdTrip: TripDetails? = nil
+
+    var body: some View {
+        let config = ModelConfiguration(
+            isStoredInMemoryOnly: true
+        )
+
+        let container = try! ModelContainer(
+            for: TripDetails.self,
+            configurations: config
+        )
+        
+        // Paris Trip
+        let trip1 = TripDetails(
+            city: "Paris",
+            country: "France",
+            customTripName: "Bonjour, Paris",
+            startDate: Date().addingTimeInterval(86400 * 12),
+            endDate: Date().addingTimeInterval(86400 * 18),
+            travelVibes: ["🎨 Culture", "🥐 Culinary"],
+            budgetLevel: 7,
+            tripPace: 4
+        )
+
+        // Tokyo Trip
+        let trip2 = TripDetails(
+            city: "Tokyo",
+            country: "Japan",
+            customTripName: "Tokyo Drift",
+            startDate: Date().addingTimeInterval(86400 * 30),
+            endDate: Date().addingTimeInterval(86400 * 38),
+            travelVibes: ["🌃 Nightlife", "🛍️ Shopping"],
+            budgetLevel: 9,
+            tripPace: 8
+        )
+
+        // Bali Trip
+        let trip3 = TripDetails(
+            city: "Bali",
+            country: "Indonesia",
+            customTripName: "Island Reset",
+            startDate: Date().addingTimeInterval(86400 * 5),
+            endDate: Date().addingTimeInterval(86400 * 9),
+            travelVibes: ["🏖️ Relaxation", "☕ Café Hopping"],
+            budgetLevel: 5,
+            tripPace: 2
+        )
+
+        container.mainContext.insert(trip1)
+        container.mainContext.insert(trip2)
+        container.mainContext.insert(trip3)
+
+        return HomeView(createdTrip: $createdTrip)
+            .modelContainer(container)
+    }
+}
 //#Preview("With Trips") {
+//    
+//    @Previewable @State var createdTrip: TripDetails? = nil
 //
 //    let config = ModelConfiguration(
 //        isStoredInMemoryOnly: true
@@ -316,6 +379,6 @@ struct TripRowCard: View {
 //    container.mainContext.insert(trip2)
 //    container.mainContext.insert(trip3)
 //
-//    return HomeView()
+//    HomeView(createdTrip: $createdTrip)
 //        .modelContainer(container)
 //}

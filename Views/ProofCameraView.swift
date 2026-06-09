@@ -201,26 +201,28 @@ struct ProofCameraView: View {
         image: UIImage,
         result: VerificationResult
     ) -> some View {
-        ZStack {
-            Image(uiImage: image)
-                .resizable()
-                .scaledToFill()
-                .ignoresSafeArea()
-                .blur(radius: 10)
-                .overlay(Color.black.opacity(0.65))
+        GeometryReader { geo in
+            ZStack {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geo.size.width, height: geo.size.height)
+                    .blur(radius: 10)
+                    .overlay(Color.black.opacity(0.65))
 
-            VStack(spacing: 20) {
-                resultIcon(for: result)
-                resultMessage(for: result)
-                resultButtons(for: result)
+                VStack(spacing: 20) {
+                    resultIcon(for: result)
+                    resultMessage(for: result)
+                    resultButtons(for: result)
+                }
+                .padding(28)
+                .frame(width: geo.size.width - 48)
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
+                .shadow(radius: 20)
             }
-            .padding(28)
-            .frame(width: 300)
-            .background(.ultraThinMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
-            .shadow(radius: 20)
+            .frame(width: geo.size.width, height: geo.size.height)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
     }
 

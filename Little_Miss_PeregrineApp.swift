@@ -4,29 +4,47 @@
 //
 //  Created by Nadia on 06/06/26.
 //
+//
+//import SwiftUI
+//import SwiftData
+//
+//@main
+//struct Little_Miss_PeregrineApp: App {
+//    var body: some Scene {
+//        WindowGroup {
+//            ContentView()
+//        }
+//        .modelContainer(for: [TripDetails.self, ItineraryItem.self])
+//    }
+//}
+
+
+//
+//  LittleMissPeregrineApp.swift
+//
 
 import SwiftUI
 import SwiftData
 
 @main
-struct Little_Miss_PeregrineApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+struct LittleMissPeregrineApp: App {
+    @State private var showLaunch = true
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if showLaunch {
+                LaunchScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            withAnimation(.easeInOut(duration: 0.1)) {
+                                showLaunch = false
+                            }
+                        }
+                    }
+            } else {
+                ContentView()
+                    .modelContainer(for: [TripDetails.self, ItineraryItem.self])
+            }
         }
-        .modelContainer(sharedModelContainer)
     }
 }
