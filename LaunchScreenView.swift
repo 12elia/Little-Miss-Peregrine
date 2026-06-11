@@ -20,8 +20,14 @@ struct LaunchScreenView: View {
 
             VStack(spacing: 18) {
                 // App Name
-                Text("LITTLE MISS PEREGRINE")
-                    .font(.system(size: 20, weight: .regular, design: .serif))
+                Text("LITTLE MISS")
+                    .font(.system(size: 24, weight: .regular, design: .serif))
+                    .foregroundColor(.inkMid)
+                    .tracking(1.5)
+                    .opacity(textOpacity)
+                    .offset(y: textOffset)
+                Text("PEREGRINE")
+                    .font(.system(size: 24, weight: .regular, design: .serif))
                     .foregroundColor(.inkMid)
                     .tracking(1.5)
                     .opacity(textOpacity)
@@ -31,7 +37,7 @@ struct LaunchScreenView: View {
                 Image("icon") // replace with your asset name if different
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 180, height: 180)
+                    .frame(width: 200, height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
                     .shadow(color: .inkDark.opacity(0.12), radius: 16, x: 0, y: 6)
                     .scaleEffect(iconScale)
