@@ -14,7 +14,7 @@
 
 Hello, Travelers!
 
-This is my first attempt at developing an iOS travel companion app as one of the portfolio submissions for Apple Developer Academy. The app generates personalized itineraries tailored to the user's destination, budget, travel styles, and preferred pace. To encourage authentic exploration, users check in at venues by taking a Live Photo on-site, while a GPS verification system confirms whether each visit was genuine. The result is a passport-like travel experience that combines trip planning, discovery, and travel memories.
+The app generates personalized itineraries tailored to the user's destination, budget, travel styles, and preferred pace. To encourage authentic exploration, users check in at venues by taking a Live Photo on-site, while a GPS verification system confirms whether each visit was genuine. The result is a passport-like travel experience that combines trip planning, discovery, and travel memories.
 
 Unlike many travel apps, Little Miss Peregrine is privacy-first. All trip data is stored locally using SwiftData, meaning users do not need to create an account or sign in. Their itineraries, progress, and travel history remain on their device.
 
